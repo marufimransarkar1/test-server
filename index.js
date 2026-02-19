@@ -29,12 +29,26 @@ async function run() {
 
     // mongodb database collection products
      const productsCollection = client.db('dealbuzzzDB').collection('products')
+
     // get product api
     app.get('/products', async (req, res) => {
         const cursor = productsCollection.find();
         const result = await cursor.toArray();
         res.send(result);
     })
+
+    //post product api
+    app.post("/products", async (req, res) => {
+    const product = req.body;
+
+    if (!product.name || !product.price) {
+    return res.status(400).send({ message: "Missing required fields" });
+    }
+
+    const result = await productsCollection.insertOne(product);
+    res.send(result);
+    });
+
 
 
 
