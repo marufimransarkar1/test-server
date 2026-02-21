@@ -4,6 +4,9 @@
  * Node.js + Express + MongoDB
  * Fully professional structure with async/await, MongoDB storage for all entities
  */
+//  * Node.js + Express + MongoDB
+//  * Fully professional structure with async/await, MongoDB storage for all entities
+//  */
 
 const express = require("express");
 const bcrypt = require("bcryptjs");
