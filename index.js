@@ -31,12 +31,18 @@ async function run() {
     // mongodb database collection products
      const productsCollection = client.db('dealbuzzzDB').collection('products')
 
-    // get product api
+    /*/ get product api
     app.get('/products', async (req, res) => {
         const cursor = productsCollection.find();
         const result = await cursor.toArray();
         res.send(result);
-    })
+    })*/
+
+        app.get('/api/products', async (req, res) => {
+  const cursor = productsCollection.find();
+  const result = await cursor.toArray();
+  res.send(result);
+});
 
     //post product api
     app.post("/products", async (req, res) => {
