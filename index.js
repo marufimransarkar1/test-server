@@ -12,7 +12,8 @@ app.use(express.json());
 
 
 
-const uri = process.env.MONGODB_URI; 
+//const uri = process.env.MONGODB_URI; 
+const uri = "mongodb+srv://badhonbiswast_db_user:XMpr2kj5ljskeQy2@cluster0.vsobqwr.mongodb.net/?appName=Cluster0";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
